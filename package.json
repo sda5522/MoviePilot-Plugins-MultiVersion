@@ -7,6 +7,7 @@
     "icon": "https://raw.githubusercontent.com/jxxghp/MoviePilot-Plugins/main/icons/download.png",
     "author": "MoviePilot",
     "level": 2,
+    "v2": true,
     "history": {
       "v1.0.0": "首次发布，支持自动下载多个规则组匹配的版本"
     }
