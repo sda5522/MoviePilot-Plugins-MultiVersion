@@ -168,34 +168,8 @@ class DoubanSync(_PluginBase):
                 del self._processing[media_key]
 
     def get_form(self) -> Tuple[List[dict], Dict[str, Any]]:
-        """配置表单 - 实际功能：多版本下载配置"""
-        from app.helper.rule import RuleHelper
-
-        rule_groups = RuleHelper().get_rule_groups()
-        rule_items = []
-
-        for group in rule_groups:
-            rule_items.append({
-                'component': 'VCard',
-                'props': {'variant': 'tonal', 'class': 'mb-3'},
-                'content': [
-                    {'component': 'VCardTitle', 'text': group.name},
-                    {'component': 'VCardSubtitle', 'text': f"规则: {group.rule_string[:80]}..."},
-                    {
-                        'component': 'VCardText',
-                        'content': [{
-                            'component': 'VSwitch',
-                            'props': {
-                                'model': f'selected_rules.{group.name}',
-                                'label': '✅ 一并保存此版本',
-                                'color': 'primary'
-                            }
-                        }]
-                    }
-                ]
-            })
-
-        form_config = [
+        """配置表单 - 简化版测试"""
+        return [
             {
                 'component': 'VForm',
                 'content': [
@@ -208,24 +182,7 @@ class DoubanSync(_PluginBase):
                                 'component': 'VSwitch',
                                 'props': {
                                     'model': 'enabled',
-                                    'label': '启用插件（实际功能：多版本下载）',
-                                    'color': 'primary'
-                                }
-                            }]
-                        }]
-                    },
-                    {
-                        'component': 'VRow',
-                        'content': [{
-                            'component': 'VCol',
-                            'props': {'cols': 12, 'md': 6},
-                            'content': [{
-                                'component': 'VTextField',
-                                'props': {
-                                    'model': 'delay_seconds',
-                                    'label': '延迟时间（秒）',
-                                    'type': 'number',
-                                    'hint': '等待时间（建议15-30秒）'
+                                    'label': '启用插件',
                                 }
                             }]
                         }]
@@ -238,32 +195,17 @@ class DoubanSync(_PluginBase):
                             'content': [{
                                 'component': 'VAlert',
                                 'props': {
-                                    'type': 'warning',
-                                    'variant': 'tonal',
-                                    'text': '⚠️ 注意：此插件已被魔改为【多版本下载】功能！\n原豆瓣想看功能已失效！'
+                                    'type': 'error',
+                                    'text': '⚠️ 测试版：此插件已被魔改！原功能已失效！'
                                 }
                             }]
-                        }]
-                    },
-                    {
-                        'component': 'VRow',
-                        'content': [{
-                            'component': 'VCol',
-                            'props': {'cols': 12},
-                            'content': rule_items
                         }]
                     }
                 ]
             }
-        ]
-
-        default_config = {
-            "enabled": False,
-            "selected_rules": {},
-            "delay_seconds": 15
+        ], {
+            "enabled": False
         }
-
-        return form_config, default_config
 
     def get_page(self) -> List[dict]:
         """详情页"""
