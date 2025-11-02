@@ -269,7 +269,8 @@ class MultiVersionDownloadPlus(_PluginBase):
                 ]
             })
         
-        return [
+        # 配置表单和默认值
+        form_config = [
             {
                 'component': 'VForm',
                 'content': [
@@ -387,11 +388,16 @@ class MultiVersionDownloadPlus(_PluginBase):
                     }
                 ]
             }
-        ], {
+        ]
+        
+        # 默认配置
+        default_config = {
             "enabled": False,
             "selected_rules": {},
             "delay_seconds": 15
         }
+        
+        return form_config, default_config
     
     def get_page(self) -> List[dict]:
         """插件详情页"""
