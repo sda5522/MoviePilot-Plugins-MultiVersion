@@ -9,9 +9,9 @@ from app.plugins import _PluginBase
 from app.schemas.types import EventType, MediaType
 
 
-class MultiVersionDownload(_PluginBase):
+class MultiVersionDownloadPlus(_PluginBase):
     """
-    多版本下载插件 V2
+    多版本下载插件 V2 增强版
     
     核心功能：
     1. 监听订阅下载完成事件
