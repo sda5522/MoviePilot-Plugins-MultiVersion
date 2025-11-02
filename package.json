@@ -1048,5 +1048,18 @@
     "author": "cddjr",
     "level": 1,
     "v2": true
+  },
+  "MultiVersionDownload": {
+    "name": "多版本下载",
+    "description": "突破洗版限制，自动下载多个规则组匹配的版本。",
+    "labels": "订阅,下载",
+    "version": "1.0.0",
+    "icon": "download.png",
+    "author": "MoviePilot",
+    "level": 2,
+    "v2": true,
+    "history": {
+      "v1.0.0": "首次发布，支持自动下载多个规则组匹配的版本"
+    }
   }
 }
