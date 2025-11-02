@@ -1,6 +1,6 @@
 import threading
 import time
-from typing import Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
 
 from app.core.event import eventmanager, Event
 from app.db.downloadhistory_oper import DownloadHistoryOper
@@ -65,6 +65,25 @@ class MultiVersionDownloadPlus(_PluginBase):
     def get_state(self) -> bool:
         """获取插件状态"""
         return self._enabled
+    
+    @staticmethod
+    def get_command() -> List[Dict[str, Any]]:
+        """
+        定义远程控制命令
+        """
+        pass
+    
+    def get_api(self) -> List[Dict[str, Any]]:
+        """
+        获取插件API
+        """
+        pass
+    
+    def get_service(self) -> List[Dict[str, Any]]:
+        """
+        注册插件公共服务
+        """
+        pass
     
     @eventmanager.register(EventType.DownloadAdded)
     def on_download_added(self, event: Event):
