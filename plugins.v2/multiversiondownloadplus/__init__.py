@@ -26,19 +26,19 @@ class MultiVersionDownload(_PluginBase):
     """
     
     # 插件名称
-    plugin_name = "多版本下载"
+    plugin_name = "多版本下载增强版"
     # 插件描述
-    plugin_desc = "突破洗版限制，自动下载多个规则组匹配的版本。"
+    plugin_desc = "突破洗版限制，自动下载多个规则组匹配的版本。（增强版）"
     # 插件图标
     plugin_icon = "download.png"
     # 插件版本
-    plugin_version = "1.0.0"
+    plugin_version = "1.0.1"
     # 插件作者
-    plugin_author = "MoviePilot"
+    plugin_author = "sda5522"
     # 作者主页
-    author_url = "https://github.com/jxxghp/MoviePilot"
+    author_url = "https://github.com/sda5522/MoviePilot-Plugins-MultiVersion"
     # 插件配置项ID前缀
-    plugin_config_prefix = "multiversiondownload_"
+    plugin_config_prefix = "multiversiondownloadplus_"
     # 加载顺序
     plugin_order = 1
     # 可使用的用户级别
